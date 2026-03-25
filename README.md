@@ -12,6 +12,21 @@
 - **User Authentication** (JWT & Cookies).
 - **Admin Dashboard** for managing users, products, categories, and orders.
 
+## 📸 Screenshots
+*(Save your screenshots in the `screenshots` folder and name them exactly as shown below to automatically appear here!)*
+
+- **Home Page**
+  <br>
+  ![Home Page](./screenshots/home.png)
+
+- **Shop Page**
+  <br>
+  ![Shop Page](./screenshots/shop.png)
+
+- **Cart Interface**
+  <br>
+  ![Cart Interface](./screenshots/cart.png)
+
 ---
 
 ## 💻 How to Run the Application
