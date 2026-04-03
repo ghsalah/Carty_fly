@@ -1,8 +1,11 @@
 import asyncHandler from "../middlewares/asyncHandler.js";
 import fs from "fs/promises";
 import path from "path";
+import { fileURLToPath } from "url";
 
-const productsFilePath = path.join(process.cwd(), "backend", "products.json");
+const __fileName = fileURLToPath(import.meta.url);
+const __dirName = path.dirname(__fileName);
+const productsFilePath = path.join(__dirName, "..", "products.json");
 
 const getProductsData = async () => {
   try {
