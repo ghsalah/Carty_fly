@@ -3,25 +3,32 @@ import HeartIcon from "./HeartIcon";
 
 const SmallProduct = ({ product }) => {
   return (
-    <div className="w-full bg-white rounded-3xl p-3 shadow-sm hover:shadow-md transition-shadow duration-300 relative group border border-[#e5e5ea]">
-      <div className="relative w-full overflow-hidden rounded-2xl bg-[#f5f5f7]">
+    <div className="w-full bg-white/50 backdrop-blur-md rounded-[28px] p-4 premium-shadow hover:premium-shadow-hover transition-all duration-500 relative group border border-black/5 flex flex-col gap-4">
+      <div className="relative w-full overflow-hidden rounded-[20px] bg-[#f5f5f7] aspect-square">
         <Link to={`/product/${product._id}`}>
           <img
             src={product.image}
             alt={product.name}
-            className="w-full h-[180px] object-cover transition-transform duration-500 group-hover:scale-105"
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           />
         </Link>
-        <HeartIcon product={product} />
+        <div className="absolute top-2 right-2 z-10 scale-90">
+            <HeartIcon product={product} />
+        </div>
       </div>
 
-      <div className="pt-4 pb-2 px-2">
+      <div className="flex flex-col">
         <Link to={`/product/${product._id}`}>
-          <div className="flex justify-between items-center text-[#1d1d1f]">
-            <h2 className="text-[15px] font-medium truncate pr-2">{product.name}</h2>
-            <span className="text-sm font-semibold bg-[#f5f5f7] px-2.5 py-1 rounded-full whitespace-nowrap">
-              ${product.price}
-            </span>
+          <div className="flex flex-col gap-1">
+            <h2 className="text-[16px] font-bold text-[#1d1d1f] truncate group-hover:text-[#0071e3] transition-colors">{product.name}</h2>
+            <div className="flex justify-between items-center">
+                <span className="text-[15px] font-bold text-[#1d1d1f]">
+                    ${product.price}
+                </span>
+                <span className="text-[11px] font-bold text-[#86868b] uppercase tracking-widest bg-black/5 px-2 py-0.5 rounded-full">
+                    {product.brand}
+                </span>
+            </div>
           </div>
         </Link>
       </div>
