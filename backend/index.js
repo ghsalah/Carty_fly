@@ -36,10 +36,7 @@ app.get("/api/config/paypal", (req, res) => {
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname + "/uploads")));
 
-// Root route for initial verification or ping
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
+// Removed root route for Vercel deployment consistency
 
 // Conditionally listen if not running as a serverless function (Vercel)
 if (process.env.NODE_ENV !== "production") {
